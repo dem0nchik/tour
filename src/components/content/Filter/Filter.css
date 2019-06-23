@@ -40,7 +40,13 @@ aside {
 
 .filter-toggl {
     border-bottom: 1px solid rgba(5,5,5, 0.1);
-    width: 260px;
+    width: 260px;   
+}
+.filter-toggl label{
+    font-size: 18px;
+}
+.filter-toggl h3{
+    cursor: pointer;
 }
 
 

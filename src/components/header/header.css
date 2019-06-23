@@ -26,7 +26,7 @@ nav {
 }
 
 .nav-menu span {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .nav-search {
@@ -44,6 +44,19 @@ nav {
     cursor: pointer;
     color: white;
 
+}
+.nav-search__button {
+    background-color: #fff;
+    padding: 9px 10px;
+    border: 1px solid #f55;
+    font-size: 15px;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #f55;
+}
+.nav-search__button:hover {
+    background-color: rgba(255, 85, 85, 0.1);
 }
 
 @media screen and (max-width: 500px) {
