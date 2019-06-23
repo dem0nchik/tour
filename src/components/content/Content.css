@@ -1,0 +1,18 @@
+main {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.content-wrap {
+    display: flex
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        width: 370px;
+    }
+    
+    .content-wrap {
+        flex-direction: column;
+    }
+}
