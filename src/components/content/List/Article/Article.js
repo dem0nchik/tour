@@ -1,16 +1,17 @@
 import React from 'react'
 import './Article.css'
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const Article = (props) => {
-    const { img, hit, title, reviews, duration, description, price, excursiondate } = props.data
+    const {id, img, hit, title, reviews, duration, description, price, date } = props.data
     
     return (
         <article>
             <div className='article'>
-                <img src={img} alt=''/>
+            <Link  to={'tour\\'+id}><img src={img} alt=''/></Link>
                 <div>
                     { hit && <p className='article__hit'>Хіт продаж</p> }
-                    <h3>{title}</h3>
+                    <Link  to={'tour\\'+id}><h3>{title}</h3></Link>
                     <div className='article__column'>
                         <span className='article__reviews'>Відгуки: {reviews}</span>
                         <span className='article__duration'>Тривалість: {duration}г.</span>
@@ -24,7 +25,7 @@ const Article = (props) => {
                         </div>
                         <div>
                             <span className='article__excursion'>найближча екскурсія: </span>
-                            <span className='article__excursion-date'>{excursiondate}</span>
+                            <span className='article__excursion-date'>{date.excursiondate}</span>
                         </div>
                     </div>
                 </div>

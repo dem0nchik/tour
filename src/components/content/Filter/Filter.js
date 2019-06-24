@@ -1,19 +1,39 @@
 import React, { useState } from 'react'
 import './Filter.css'
 
-const Filter = () => {
-    const [toogleDuration, setToogleDuration] = useState(true);
+const Filter = (props) => {
+    const [toogleDuration, setToogleDuration] = useState(false);
     const [toogleCateg, setToogleCateg] = useState(false);
-    const [tooglePrice, setTooglePrice] = useState(false);
+    const [tooglePrice, setTooglePrice] = useState(true);
+
+    const [duration, setDuration] = useState(0);
+    const [price, setPrice] = useState(1000);
+    const [dateFrom, setDateFrom] = useState('');
+    const [dateTo, setDateTo] = useState('');
+
+    const handleDuration = (e) => {
+        e.currentTarget.checked ? setDuration(e.currentTarget.value) : setDuration(0)
+    }
+    const handlePrice = (e) => {
+        if(e.currentTarget.checked && +e.currentTarget.value === 2000)
+            setPrice(e.currentTarget.value)
+         else setPrice(5000)
+    }
+    const handleDateTo = e => setDateTo(e.currentTarget.value)
+    const handleDateFrom = e =>  setDateFrom(e.currentTarget.value)
+
+    const sendData = () => {
+       props.filterOption(duration, price, dateFrom, dateTo)
+    }
 
     return (
         <aside>
             <div className='filter'>
                 <div className='filter-date'>
                     <h3>Вибір дати</h3>
-                    <input type='date' id='date-from' />
-                    <input type='date' id='date-to' />
-                    <button>Знайти</button>
+                    <input type='date' id='date-from' onChange={handleDateFrom}/>
+                    <input type='date' id='date-to' onChange={handleDateTo}/>
+                    <button onClick={sendData}>Знайти</button>
                 </div>
 
                 <div className='filter-toggles'>
@@ -21,10 +41,10 @@ const Filter = () => {
                         <h3 onClick={() => setToogleDuration(!toogleDuration) }>Тривалість</h3>                        
                         { toogleDuration &&
                             <ul>
-                                <li><label><input type='checkbox'/>0 - 3 години</label></li>
-                                <li><label><input type='checkbox'/>3 - 5 годин</label></li>
-                                <li><label><input type='checkbox'/>5 - 7 годин</label></li>
-                                <li><label><input type='checkbox'/>Цілий день</label></li>
+                                <li><label><input type='checkbox' value='3' onClick={handleDuration}/>0 - 3 години</label></li>
+                                <li><label><input type='checkbox' value='5' onClick={handleDuration}/>3 - 5 годин</label></li>
+                                <li><label><input type='checkbox' value='7' onClick={handleDuration}/>5 - 7 годин</label></li>
+                                <li><label><input type='checkbox' value='8' onClick={handleDuration}/>Цілий день</label></li>
                             </ul>
                         }
                     </div>
@@ -50,8 +70,8 @@ const Filter = () => {
                         <h3 onClick={() => setTooglePrice(!tooglePrice) }>Ціни</h3>
                         { tooglePrice &&
                             <ul>
-                                <li><label><input type='checkbox'/>від 3000</label></li>
-                                <li><label><input type='checkbox'/>від 5000</label></li>
+                                <li><label><input type='checkbox' value='2000' onClick={handlePrice}/>від 2000</label></li>
+                                <li><label><input type='checkbox' value='5000' onClick={handlePrice}/>від 5000</label></li>
                             </ul>
                         }
                     </div>

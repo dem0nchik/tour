@@ -35,7 +35,7 @@ nav {
     border: 1px solid #999;
 }
 
-.nav-button {
+.nav-login {
     background-color: #f55;
     padding: 9px 30px;
     border: none;
@@ -43,6 +43,7 @@ nav {
     border-radius: 20px;
     cursor: pointer;
     color: white;
+    text-decoration: none;
 
 }
 .nav-search__button {
@@ -76,5 +77,8 @@ nav {
     .nav-logo {
         display: block;
         margin: 0 auto;
+    }
+    .nav-login{
+        margin-top: 20px;
     }
 }

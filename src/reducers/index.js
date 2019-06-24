@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import search from './search'
+import tour from './tour'
 
-const rootReducer = combineReducers({search})
+const rootReducer = combineReducers({tour})
 
 export default rootReducer
