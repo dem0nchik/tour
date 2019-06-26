@@ -19,3 +19,8 @@ export const filterOption = (duration, price, dateFrom, dateTo) => ({
 export const userLogin = () => ({
     type: 'USER_LOGIN'
 })
+
+export const choosedTour = (id) => ({
+    type: 'CHOOSED_TOUR',
+    id
+})

@@ -17,7 +17,7 @@ const Login = (props) => {
     return (
         <div className='login-wrapp'>
             <h2>Війти в акаунт</h2>
-            <p className='login-hint'>login : 12345</p>
+            <p className='login-hint'>login | 12345</p>
             <form>
                 <input className='login-user'
                        type='text' 

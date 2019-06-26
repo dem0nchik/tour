@@ -1,7 +1,7 @@
 import React from 'react'
 import './header.css'
 import {connect} from 'react-redux'
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom"; // eslint-disable-line no-console
 import { searchWord } from '../../actions/actionCreator.js'
 
 class Header extends React.Component {

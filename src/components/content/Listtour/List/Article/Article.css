@@ -1,0 +1,78 @@
+.article {
+    display: flex;
+    padding: 0 40px 20px 20px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #ccc;
+}
+
+.article img {
+    min-width: 200px;
+    width: 250px;
+    height: 155px;
+    margin-right: 20px;
+}
+
+.article a{
+    text-decoration: none;
+    color: black;
+} 
+
+.article__hit {
+    margin: 0;
+    padding: 2px 4px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: rgb(44, 192, 63);
+    border: 1px solid rgb(44, 192, 63);
+    width: 90px;
+    text-align: center;
+}
+
+.article h3 {
+    margin: 12px 0;
+}
+.article__column {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.article__reviews, .article__duration {
+    font-weight: 600;
+}
+
+.article__description {
+    margin: 15px 0;
+}
+.article__price {
+    font-size: 20px;
+}
+.price-from {
+    margin: 0 20px 0 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.article__excursion {
+    color: #999;
+    font-size: 18px;
+    padding-right: 0 5px;
+}
+
+.article__excursion-date {
+    font-size: 16px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .article {
+        padding: 0 5px;
+        margin-bottom: 50px;
+        flex-direction: column;
+    }
+    .article img {
+        margin-bottom: 10px;
+        width: 350px;
+    }
+}

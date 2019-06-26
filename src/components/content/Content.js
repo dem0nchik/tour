@@ -1,9 +1,12 @@
 import React from 'react'
 import './Content.css'
-import Filter from './Filter/Filter'
-import List from './List/List'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
-import { getTours, filterOption } from '../../actions/actionCreator.js'
+import { getTours, filterOption, choosedTour } from '../../actions/actionCreator.js'
+import Pagetour from './Pagetour/Pagetour.js'
+import Listtour from './Listtour/Listtour.js'
+import Header from '../header/header.js'
+import Login from '../Login/Login.js'
 
 class Content extends React.Component {
     componentDidMount() {
@@ -16,18 +19,20 @@ class Content extends React.Component {
             })
     }
     render(){
+        const {chooseTour} = this.props.tour
         return(
-            <main>
-                <p className='content-title'><span>{this.props.tour.search}</span> знайдено <span>{this.props.tour.filteredTour.length}</span> заходи</p>
-                <div className='content-wrap'>
-                    <Filter filterOption={this.props.filterOption} />
-                    {this.props.tour.filteredTour.length && <List data={this.props.tour.filteredTour} /> }
-                </div>
-            </main>
+            <Router>
+                <Header />
+                <Route path='/login' component={Login} />
+                    <main>
+                        <Route  path='/' exact render={() => <Listtour choosedTour={this.props.choosedTour} filterOption={this.props.filterOption} tour={this.props.tour}/>} />
+                        <Route path={`/tour/${chooseTour}`} exact  render={() =><Pagetour/>} />
+                    </main>
+            </Router>
         )
     }
 }
 
 export default connect(state => ({
     tour: state.tour,
-}), {getTours, filterOption})(Content)
+}), {getTours, filterOption, choosedTour})(Content)

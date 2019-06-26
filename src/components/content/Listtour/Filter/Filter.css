@@ -1,0 +1,58 @@
+aside {
+    width: 300px;
+}
+.filter-date {
+    width: 250px;
+    background-color: rgb(238, 238, 252);
+    padding: 2px 10px 10px;
+}
+
+.filter-date input {
+    width: 104px;
+    margin: 0 5px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.filter-date button {
+    display: block;
+    background-color: #f55;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+}
+
+.filter-toggles li {
+    list-style-type: none;
+    margin: 7px 0;
+}
+
+.filter-toggles input {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+}
+
+.filter-toggl {
+    border-bottom: 1px solid rgba(5,5,5, 0.1);
+    width: 260px;   
+}
+.filter-toggl label{
+    font-size: 18px;
+}
+.filter-toggl h3{
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 500px) {
+    aside {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}

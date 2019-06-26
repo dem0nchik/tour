@@ -3,6 +3,7 @@ const initialState = {
      tour: [],
      filteredTour: [],
      isLogin: false,
+     chooseTour: undefined
 }
 
 const tour = (state = initialState, action) => {
@@ -23,6 +24,8 @@ const tour = (state = initialState, action) => {
                         })
         case 'USER_LOGIN':
                 return ( {...state, isLogin: true})
+        case 'CHOOSED_TOUR':
+                return ( {...state, chooseTour: action.id})
         default:
             return state
     }
