@@ -1,0 +1,15 @@
+.nav-favorite__container img {
+    width: 90%;
+}
+.nav-favorite__container{
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 85, 85,0.5);
+    text-align: center;
+}
+
+.nav-favorite__container h4, h5, a{
+    margin: 8px 0;
+    text-decoration: none;
+    color: #fafafa;
+}

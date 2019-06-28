@@ -8,7 +8,11 @@ const Listtour = (props) => {
             <p className='content-title'><span>{props.tour.search}</span> знайдено <span>{props.tour.filteredTour.length}</span> заходи</p>
             <div className='content-wrap'>
                 <Filter filterOption={props.filterOption} />
-                {props.tour.filteredTour.length && <List data={props.tour.filteredTour}  choosedTour={props.choosedTour}/> }
+                {props.tour.tourPagination.length && <List data={props.tour.tourPagination}
+                                                         choosedTour={props.choosedTour}
+                                                         isLogin={props.isLogin}
+                                                         addFavorite={props.addFavorite}
+                                                         pagination={props.pagination}/> }
             </div>
         </>
     )

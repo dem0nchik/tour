@@ -26,13 +26,54 @@ nav {
 }
 
 .nav-menu span {
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 .nav-search {
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #999;
+}
+.nav-currentlang {
+    cursor: pointer;
+}
+
+.nav-lang {
+    text-align: center;
+    background-color: #f55;
+    
+    position: relative;
+    top:0px;
+}
+
+.nav-favorite__wrap {
+    width: 270px;    
+    position: absolute;
+    top:10%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0 5px;
+    margin-left: -10px;
+    border: 2px solid rgba(255, 85, 85,0.5);
+}
+
+.nav-lang p {
+    margin: 5px 0;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+.nav-lang p:hover {
+    
+    background-color: #555;
+}
+
+.nav-favorite {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.nav-favorite:hover {
+    background-color: rgba(255, 209, 209, 0.1);
 }
 
 .nav-login {
@@ -78,7 +119,11 @@ nav {
         display: block;
         margin: 0 auto;
     }
-    .nav-login{
+    .nav-login, .nav-favorite{
         margin-top: 20px;
     }
+    .nav-favorite__wrap {
+        top: 250px;
+    }
+    
 }

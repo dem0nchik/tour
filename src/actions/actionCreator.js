@@ -24,3 +24,12 @@ export const choosedTour = (id) => ({
     type: 'CHOOSED_TOUR',
     id
 })
+
+export const addFavorite = id => ({
+    type: 'ADD_FAVORITE',
+    id
+})
+
+export const pagination = () => ({
+    type: 'PAGINATION'
+})
